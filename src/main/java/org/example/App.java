@@ -24,6 +24,9 @@ public class App {
                 System.out.print("Heeft u een partner? (ja/nee): ");
                 boolean heeftPartner = scanner.next().equalsIgnoreCase("ja");
 
+                System.out.print("Wat is het inkomen van uw partner?: ");
+                double partnerInkomen = scanner.nextDouble();
+
                 System.out.print("Heeft u een studieschuld? (ja/nee): ");
                 boolean heeftStudieschuld = scanner.next().equalsIgnoreCase("ja");
 
@@ -33,7 +36,7 @@ public class App {
                 System.out.print("Voer uw postcode in: ");
                 String postcode = scanner.next();
 
-                double maxHypotheek = berekenMaxTeLenenBedrag(maandinkomen, heeftPartner, heeftStudieschuld, rentevastePeriode, postcode);
+                double maxHypotheek = berekenMaxTeLenenBedrag(maandinkomen + partnerInkomen, heeftStudieschuld, rentevastePeriode, postcode);
 
                 System.out.println("U kunt maximaal €" + maxHypotheek + " lenen.");
             } else if (keuze == 2) {
@@ -46,7 +49,7 @@ public class App {
 
         scanner.close();
     }
-    public static double berekenMaxTeLenenBedrag(double maandinkomen, boolean heeftPartner, boolean heeftStudieschuld, int rentevastePeriode, String postcode) {
+    public static double berekenMaxTeLenenBedrag(double maandinkomen, boolean heeftStudieschuld, int rentevastePeriode, String postcode) {
         if (maandinkomen <= 0 || (rentevastePeriode != 1 && rentevastePeriode != 5 && rentevastePeriode != 10 && rentevastePeriode != 20 && rentevastePeriode != 30)) {
             throw new IllegalArgumentException("Ongeldige invoer");
         }
@@ -64,15 +67,27 @@ public class App {
             default -> throw new IllegalArgumentException("Ongeldige rentevaste periode");
         };
 
-        double maxHypotheek = maandinkomen * 12 * rentevastePeriode / (1 - Math.pow(1 + rentePercentage / 12, -rentevastePeriode * 12));
+        double maxTeLenen = maandinkomen * 12 * 4.25;
 
-        if (heeftPartner) {
-            maxHypotheek += maxHypotheek * 0.2;
-        }
-        if (heeftStudieschuld) {
-            maxHypotheek *= 0.75;
+        if (heeftStudieschuld == true) {
+            maxTeLenen = maxTeLenen * 0.75;
         }
 
-        return Math.round(maxHypotheek * 100) / 100.0;
+        double renteBedrag = maxTeLenen * (rentePercentage / 12);
+
+        double aflossingsBedrag = maxTeLenen / (rentevastePeriode * 12);
+
+        double totaalBedrag = renteBedrag + aflossingsBedrag;
+
+        double totaalBetaald = totaalBedrag * rentevastePeriode * 12;
+
+        System.out.println("Uw maximale hypotheekbedrag is: " + maxTeLenen);
+        System.out.println("Uw rentebedrag is: " + renteBedrag);
+        System.out.println("Uw aflossingsbedrag is: " + aflossingsBedrag);
+        System.out.println("Uw totale maandbedrag is: " + totaalBedrag);
+        System.out.println("Uw totale hypotheekbedrag is: " + totaalBedrag);
+
+
+        return totaalBetaald;
     }
 }
