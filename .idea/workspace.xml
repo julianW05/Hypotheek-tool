@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0361896-2a5c-470b-98c5-63345921663b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
@@ -71,6 +70,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AppTest.testHypotheekInAardbevingsgebied" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hypotheektool" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
+      <option name="METHOD_NAME" value="testHypotheekInAardbevingsgebied" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppTest.testMaxHypotheekMetPartnerEnStudieschuld" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Hypotheektool" />
       <extension name="coverage">
@@ -107,6 +122,7 @@
       <list>
         <item itemvalue="JUnit.AppTest" />
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.AppTest.testHypotheekInAardbevingsgebied" />
         <item itemvalue="JUnit.AppTest.testMaxHypotheekMetPartnerEnStudieschuld" />
         <item itemvalue="JUnit.AppTest.testMaxHypotheekZonderPartnerEnGeenStudieschuld" />
       </list>
@@ -129,6 +145,7 @@
       <workItem from="1696850623361" duration="1603000" />
       <workItem from="1697012996339" duration="2933000" />
       <workItem from="1698221956083" duration="3581000" />
+      <workItem from="1698671336929" duration="5342000" />
     </task>
     <servers />
   </component>

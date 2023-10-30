@@ -3,6 +3,11 @@ package org.example;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 public class AppTest {
 
     @Test
@@ -42,5 +47,82 @@ public class AppTest {
             // Verwachtte uitzondering
 
         }
+    }
+
+    // Integration tests
+
+    // Integratietest voor volledige hypotheekberekening met correcte invoer:
+    @Test
+    public void testFullHypotheekBerekeningMetCorrecteInvoer() {
+        // Simuleer gebruikersinvoer
+        String input = "5000\nja\n2000\nnee\n30\n1234";
+        InputStream inputStream = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inputStream);
+
+        // Vang de standaarduitvoer op
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+        System.setOut(new PrintStream(outputStream));
+
+        // Voer de applicatie uit
+        App.main(new String[0]);
+
+        // Zet de standaarduitvoer terug naar de oorspronkelijke staat
+        System.setOut(originalOut);
+
+        // Vang de uitvoer op en controleer deze
+        String actualOutput = outputStream.toString();
+        String expectedOutput = "Totaal betaald na 30 jaar: 892500.00";
+        assertTrue(actualOutput.contains(expectedOutput));
+    }
+
+    // Integratietest voor berekening met studieschuld:
+    @Test
+    public void testHypotheekMetStudieschuld() {
+        // Simuleer gebruikersinvoer
+        String input = "5000\nnee\nja\n30\n1234";
+        InputStream inputStream = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inputStream);
+
+        // Vang de standaarduitvoer op
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+        System.setOut(new PrintStream(outputStream));
+
+        // Voer de applicatie uit
+        App.main(new String[0]);
+
+        // Zet de standaarduitvoer terug naar de oorspronkelijke staat
+        System.setOut(originalOut);
+
+        // Vang de uitvoer op en controleer deze
+        String actualOutput = outputStream.toString();
+        String expectedOutput = "Totaal betaald na 30 jaar: 478125.00";
+        assertTrue(actualOutput.contains(expectedOutput));
+    }
+
+    // Integratietest voor aardbevingsgebied:
+    @Test
+    public void testHypotheekInAardbevingsgebied() {
+        // Simuleer gebruikersinvoer met een aardbevingsgebied postcode
+        String input = "5000\n0\n0\n30\n9679";
+        InputStream inputStream = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inputStream);
+
+        // Vang de standaarduitvoer op
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+        System.setOut(new PrintStream(outputStream));
+
+        // Voer de applicatie uit
+        App.main(new String[0]);
+
+        // Zet de standaarduitvoer terug naar de oorspronkelijke staat
+        System.setOut(originalOut);
+
+        // Vang de uitvoer op en controleer deze
+        String actualOutput = outputStream.toString();
+        String expectedOutput = "Totaal betaald na 30 jaar: 0.00";
+        assertTrue(actualOutput.contains(expectedOutput));
     }
 }
