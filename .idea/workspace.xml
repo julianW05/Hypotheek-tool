@@ -5,12 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0361896-2a5c-470b-98c5-63345921663b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ExtraIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,7 +47,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.AppTest">
+  <component name="RunManager" selected="JUnit.ExtraIntegrationTest">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
       <module name="Hypotheektool" />
@@ -100,7 +108,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.testMaxHypotheekZonderPartnerEnGeenStudieschuld" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExtraIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Hypotheektool" />
       <extension name="coverage">
         <pattern>
@@ -109,20 +117,19 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
-      <option name="METHOD_NAME" value="testMaxHypotheekZonderPartnerEnGeenStudieschuld" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="org.example.ExtraIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppTest" />
+        <item itemvalue="JUnit.ExtraIntegrationTest" />
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.AppTest" />
         <item itemvalue="JUnit.AppTest.testHypotheekInAardbevingsgebied" />
         <item itemvalue="JUnit.AppTest.testMaxHypotheekMetPartnerEnStudieschuld" />
-        <item itemvalue="JUnit.AppTest.testMaxHypotheekZonderPartnerEnGeenStudieschuld" />
       </list>
     </recent_temporary>
   </component>
@@ -143,7 +150,9 @@
       <workItem from="1696850623361" duration="1603000" />
       <workItem from="1697012996339" duration="2933000" />
       <workItem from="1698221956083" duration="3581000" />
-      <workItem from="1698671336929" duration="6782000" />
+      <workItem from="1698671336929" duration="7795000" />
+      <workItem from="1698836158923" duration="1192000" />
+      <workItem from="1699273183962" duration="1886000" />
     </task>
     <servers />
   </component>
@@ -154,7 +163,7 @@
     <SUITE FILE_PATH="coverage/Hypotheek_tool$App.ic" NAME="App Coverage Results" MODIFIED="1698678972647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Hypotheek_tool$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1698681322427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Hypotheek_tool$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1698681733074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
   </component>
